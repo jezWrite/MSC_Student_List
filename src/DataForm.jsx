@@ -9,7 +9,7 @@ function DataForm() {
     const [editItem, setEditItem] = useState(null) 
  
     useEffect(() => { 
-        axios.get('https://capable-lebkuchen-130551.netlify.app/.netlify/functions/api') 
+        axios.get('https://capable-lebkuchen-13055.netlify.app/.netlify/functions/api') 
             .then((response) => { 
                 setData(response.data); 
             }) 
@@ -26,8 +26,8 @@ function DataForm() {
         } 
  
         const url = editItem 
-            ? `https://capable-lebkuchen-130551.netlify.app/.netlify/functions/api/${editItem._id}`
-            : 'https://capable-lebkuchen-130551.netlify.app/.netlify/functions/api';
+            ? `https://capable-lebkuchen-13055.netlify.app/.netlify/functions/api/${editItem._id}`
+            : 'https://capable-lebkuchen-13055.netlify.app/.netlify/functions/api';
         const method = editItem ? 'put' : 'post' 
  
         axios[method](url, { name, age }) 
@@ -67,7 +67,7 @@ function DataForm() {
     const handleDelete = (_id) => { 
         axios 
             .delete( 
-                `https://capable-lebkuchen-130551.netlify.app/.netlify/functions/api/${_id}` 
+                `https://capable-lebkuchen-13055.netlify.app/.netlify/functions/api/${_id}` 
             ) 
             .then(() => { 
                 setData(data.filter((item) => item._id !== _id)); 
